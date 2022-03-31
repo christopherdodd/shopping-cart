@@ -2,6 +2,8 @@ class ProductElement extends HTMLElement {
     constructor() {
         super();
 
+        this.cartItems = document.querySelector('cart-items');
+
         this.image = this.getAttribute('image');
         this.name = this.getAttribute('name');
         this.id = this.getAttribute('id');
@@ -36,6 +38,7 @@ class ProductElement extends HTMLElement {
             window.cart.items.push(itemObj);
         }
 
+        this.cartItems.render();
     }
 }
 
